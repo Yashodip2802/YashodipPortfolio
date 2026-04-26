@@ -3,156 +3,348 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yashodip Sinha | Portfolio</title>
-    <meta name="description" content="Portfolio of Yashodip Sinha, B.Tech CSE Student and Tech Enthusiast" />
+    <title>Yashodip Sinha | Tech Enthusiast & Developer</title>
+    <meta name="description" content="Portfolio of Yashodip Sinha, B.Tech CSE Student and Tech Enthusiast at JUET Guna." />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
-    
-    <!-- Creative Background -->
-    <div class="cyber-grid"></div>
+
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
 
     <div data-scroll-container class="main-container">
-      
+
       <!-- Navigation -->
-      <nav data-scroll-section class="navbar">
-        <div class="logo">YS.</div>
-        <div class="nav-links">
-          <a href="#about" data-scroll-to>About</a>
-          <a href="#education" data-scroll-to>Education</a>
-          <a href="#contact" data-scroll-to>Contact</a>
+      <nav data-scroll-section class="navbar" id="navbar">
+        <div class="nav-inner">
+          <div class="logo">YS<span>.</span></div>
+          <div class="nav-links" id="nav-links">
+            <a href="#home" data-scroll-to class="nav-link active">Home</a>
+            <a href="#about" data-scroll-to class="nav-link">About</a>
+            <a href="#education" data-scroll-to class="nav-link">Education</a>
+            <a href="#experience" data-scroll-to class="nav-link">Experience</a>
+            <a href="#achievements" data-scroll-to class="nav-link">Achievements</a>
+            <a href="#projects" data-scroll-to class="nav-link">Projects</a>
+            <a href="#contact" data-scroll-to class="nav-link nav-cta">Contact</a>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </nav>
 
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close"><i class="ri-close-line"></i></button>
+        <a href="#home" class="mobile-link" data-scroll-to>Home</a>
+        <a href="#about" class="mobile-link" data-scroll-to>About</a>
+        <a href="#education" class="mobile-link" data-scroll-to>Education</a>
+        <a href="#experience" class="mobile-link" data-scroll-to>Experience</a>
+        <a href="#achievements" class="mobile-link" data-scroll-to>Achievements</a>
+        <a href="#projects" class="mobile-link" data-scroll-to>Projects</a>
+        <a href="#contact" class="mobile-link" data-scroll-to>Contact</a>
+      </div>
+
       <!-- Hero Section -->
       <section data-scroll-section class="hero" id="home">
-        <div class="hero-bg-text">
-          <div class="marquee">
-            <span>TECH ENTHUSIAST • CREATIVE DEVELOPER • PROBLEM SOLVER • </span>
-            <span>TECH ENTHUSIAST • CREATIVE DEVELOPER • PROBLEM SOLVER • </span>
+        <div class="hero-left">
+          <p class="hero-label">WE CREATE DIGITAL EXPERIENCES FOR YOU</p>
+          <h1 class="hero-name">
+            <span>Yashodip</span>
+            <span>Sinha</span>
+          </h1>
+          <p class="hero-desc">Passionate B.Tech CSE student and tech enthusiast who crafts impactful digital solutions with code, creativity, and curiosity.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-green" data-scroll-to>Contact Me</a>
+            <div class="hero-social">
+              <a href="https://github.com/Yashodip2802" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+              <a href="https://www.linkedin.com/in/yashodipsinha2802" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="mailto:yashodipsinha406@gmail.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
+            </div>
           </div>
         </div>
-        <div class="hero-content">
-          <h2 class="greeting" data-scroll data-scroll-speed="1">Hello, World! I am</h2>
-          <h1 class="name" data-scroll data-scroll-speed="2">Yashodip Sinha</h1>
-          <h3 class="role" data-scroll data-scroll-speed="1.5">Tech Enthusiast & Developer</h3>
-          <p class="tagline" data-scroll data-scroll-speed="1">Crafting digital experiences with code and creativity.</p>
-          <div class="hero-buttons" data-scroll data-scroll-speed="0.5">
-            <a href="#contact" class="btn btn-primary" data-scroll-to>Let's Talk</a>
-            <a href="https://github.com/Yashodip2802" target="_blank" class="btn btn-secondary">
-              <i class="ri-github-fill"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/yashodipsinha2802" target="_blank" class="btn btn-secondary">
-              <i class="ri-linkedin-fill"></i> LinkedIn
-            </a>
+        <div class="hero-right">
+          <div class="hero-photo-wrap">
+            <img src="/professional_photo.jpeg" alt="Yashodip Sinha" class="hero-photo">
+            <div class="hero-photo-ring"></div>
+          </div>
+          <div class="hero-badge">
+            <i class="ri-code-s-slash-fill"></i>
+            <span>Full Stack Dev</span>
+          </div>
+        </div>
+
+        <!-- Marquee -->
+        <div class="hero-marquee-wrap">
+          <div class="hero-marquee">
+            <span>TECH ENTHUSIAST &nbsp;•&nbsp; CREATIVE DEVELOPER &nbsp;•&nbsp; PROBLEM SOLVER &nbsp;•&nbsp; BLOCKCHAIN &nbsp;•&nbsp; </span>
+            <span>TECH ENTHUSIAST &nbsp;•&nbsp; CREATIVE DEVELOPER &nbsp;•&nbsp; PROBLEM SOLVER &nbsp;•&nbsp; BLOCKCHAIN &nbsp;•&nbsp; </span>
           </div>
         </div>
       </section>
 
-      <!-- About Section -->
-      <section data-scroll-section class="about" id="about">
-        <div class="section-header" data-scroll data-scroll-speed="1">
-          <span class="section-subtitle">01. Background</span>
-          <h2 class="section-title">About Me</h2>
+      <!-- Stats Bar -->
+      <section data-scroll-section class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">Projects Built</span>
         </div>
-        
-        <div class="bento-grid">
-          
-          <div class="bento-item intro-card" data-scroll data-scroll-speed="0.5">
-            <div class="intro-content">
-              <div class="intro-text">
-                <h3>Who I am</h3>
-                <p>I am a passionate technology enthusiast with a deep love for software development and solving complex problems. I'm constantly learning new technologies and exploring innovative ways to build impactful applications.</p>
-              </div>
-              <div class="intro-photo">
-                <div class="photo-wrapper">
-                  <img src="/professional_photo.jpeg" alt="Yashodip Sinha">
-                </div>
-              </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Internship (TCS)</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">3rd</span>
+          <span class="stat-label">Year B.Tech CSE</span>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section data-scroll-section class="section" id="about">
+        <div class="section-tag">01. Background</div>
+        <h2 class="section-heading">About <span>Me</span></h2>
+        <div class="about-grid">
+          <div class="about-text-card card-dark">
+            <h3>Who I Am</h3>
+            <p>I am a passionate technology enthusiast with a deep love for software development and solving complex problems. Currently pursuing B.Tech in Computer Science Engineering at JUET, Guna.</p>
+            <p>I'm constantly learning new technologies and exploring innovative ways to build impactful applications — from blockchain analytics to interactive web experiences.</p>
+            <div class="skill-tags">
+              <span>JavaScript</span><span>Blockchain</span><span>Python</span><span>React</span><span>Node.js</span><span>C/C++</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Education Section -->
-      <section data-scroll-section class="education" id="education">
-        <div class="section-header" data-scroll data-scroll-speed="1">
-          <span class="section-subtitle">02. Academics</span>
-          <h2 class="section-title">Education</h2>
-        </div>
-        
-        <div class="bento-grid">
-          <div class="bento-item education-card current" data-scroll data-scroll-speed="1">
-            <div class="edu-image-container">
-              <img src="/jaypee_university.jpg" alt="Jaypee University of Engineering and Technology" class="edu-image">
-              <div class="edu-overlay"></div>
-              <div class="edu-icon"><i class="ri-graduation-cap-fill"></i></div>
+      <section data-scroll-section class="section" id="education">
+        <div class="section-tag">02. Academics</div>
+        <h2 class="section-heading">Education</h2>
+        <div class="edu-timeline">
+
+          <div class="timeline-card card-dark" data-scroll data-scroll-speed="0.5">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-img-wrap">
+              <img src="/jaypee_university.jpg" alt="Jaypee University">
             </div>
-            <div class="edu-details">
-              <h4>B.Tech in Computer Science Engineering</h4>
-              <p class="institution">Jaypee University of Engineering and Technology, Guna</p>
-              <p class="year">2023 - 2027</p>
+            <div class="timeline-info">
+              <span class="timeline-badge current-badge">Current</span>
+              <h3>B.Tech in Computer Science Engineering</h3>
+              <p class="timeline-org">Jaypee University of Engineering and Technology, Guna</p>
+              <p class="timeline-year"><i class="ri-calendar-line"></i> 2023 – 2027</p>
             </div>
           </div>
 
-          <div class="bento-item education-card previous" data-scroll data-scroll-speed="0.8">
-            <div class="edu-image-container">
-              <img src="/st_aloysius.jpg" alt="St. Aloysius Sr. Sec. School" class="edu-image">
-              <div class="edu-overlay"></div>
-              <div class="edu-icon"><i class="ri-school-fill"></i></div>
+          <div class="timeline-card card-dark" data-scroll data-scroll-speed="0.5">
+            <div class="timeline-dot"></div>
+            <div class="timeline-img-wrap">
+              <img src="/st_aloysius.jpg" alt="St. Aloysius School">
             </div>
-            <div class="edu-details">
-              <h4>Schooling</h4>
-              <p class="institution">St. Aloysius Sr. Sec. School, Jabalpur</p>
-              <p class="year">2023 Passout</p>
+            <div class="timeline-info">
+              <span class="timeline-badge past-badge">Completed</span>
+              <h3>Senior Secondary Schooling</h3>
+              <p class="timeline-org">St. Aloysius Sr. Sec. School, Jabalpur</p>
+              <p class="timeline-year"><i class="ri-calendar-line"></i> 2023 Passout</p>
             </div>
           </div>
+
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section data-scroll-section class="section" id="experience">
+        <div class="section-tag">03. Professional</div>
+        <h2 class="section-heading">Experience</h2>
+        <div class="exp-card card-dark">
+          <div class="exp-left">
+            <div class="exp-logo"><i class="ri-building-4-line"></i></div>
+            <div class="exp-line"></div>
+          </div>
+          <div class="exp-body">
+            <span class="exp-tag">Internship</span>
+            <h3>Software Intern</h3>
+            <h4>Tata Consultancy Services (TCS), Patna</h4>
+            <p>Completed a professional internship program at TCS, gaining valuable industry experience, understanding corporate software development life cycles, and honing technical skills in a real-world enterprise environment.</p>
+            <a href="/Yashodip_sinha_TCS.pdf" target="_blank" class="btn-outline">
+              <i class="ri-file-paper-2-line"></i> View Certificate
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section data-scroll-section class="section" id="achievements">
+        <div class="section-tag">04. Certifications</div>
+        <h2 class="section-heading">Achievements</h2>
+        <div class="cert-grid">
+
+          <div class="cert-card card-dark" data-scroll data-scroll-speed="0.5">
+            <div class="cert-top">
+              <i class="ri-award-fill cert-icon"></i>
+              <span class="cert-tag">Blockchain</span>
+            </div>
+            <h4>Blockchain 101</h4>
+            <p>Fundamentals of blockchain technology and decentralized systems.</p>
+            <a href="/BLOCKCHAIN 101.pdf" target="_blank" class="btn-outline sm">View Certificate <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+          <div class="cert-card card-dark" data-scroll data-scroll-speed="0.6">
+            <div class="cert-top">
+              <i class="ri-award-fill cert-icon"></i>
+              <span class="cert-tag">Blockchain</span>
+            </div>
+            <h4>Blockchain In Depth</h4>
+            <p>Advanced blockchain concepts, smart contracts and DeFi protocols.</p>
+            <a href="/BLOCKCHAIN IN DEPTH.pdf" target="_blank" class="btn-outline sm">View Certificate <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+          <div class="cert-card card-dark" data-scroll data-scroll-speed="0.7">
+            <div class="cert-top">
+              <i class="ri-medal-fill cert-icon"></i>
+              <span class="cert-tag">Foundation</span>
+            </div>
+            <h4>Foundation Certificate</h4>
+            <p>Core computer science and software development foundations.</p>
+            <a href="/MAIN FOUNDATION CERTIFICATE.pdf" target="_blank" class="btn-outline sm">View Certificate <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+          <div class="cert-card card-dark" data-scroll data-scroll-speed="0.5">
+            <div class="cert-top">
+              <i class="ri-code-s-slash-fill cert-icon"></i>
+              <span class="cert-tag">Programming</span>
+            </div>
+            <h4>C Programming</h4>
+            <p>Proficiency in C programming, data structures and algorithms.</p>
+            <a href="/C PROGRAMMING CERTIFICATE.pdf" target="_blank" class="btn-outline sm">View Certificate <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+          <div class="cert-card card-dark" data-scroll data-scroll-speed="0.6">
+            <div class="cert-top">
+              <i class="ri-trophy-fill cert-icon"></i>
+              <span class="cert-tag">Professional</span>
+            </div>
+            <h4>Professional Certification</h4>
+            <p>Verified professional credential in technology and development.</p>
+            <a href="/1-54b2c1c2-3477-4b4b-a45c-a8b54e751f3a_With Watermark.pdf" target="_blank" class="btn-outline sm">View Certificate <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section data-scroll-section class="section" id="projects">
+        <div class="section-tag">05. Portfolio</div>
+        <h2 class="section-heading">Projects</h2>
+        <div class="projects-grid">
+
+          <div class="project-card card-dark" data-scroll data-scroll-speed="0.5">
+            <div class="project-top">
+              <i class="ri-code-box-line project-icon"></i>
+              <a href="https://mcti-project.vercel.app/" target="_blank" class="project-link-btn"><i class="ri-external-link-line"></i> Live Demo</a>
+            </div>
+            <h3>MCTI – Multi-Chain Token Indexer</h3>
+            <p>A blockchain analytics application for real-time token balance tracking across multiple networks. Integrates MetaMask & Phantom wallets, WebSocket live updates, portfolio visualization, and token spam detection.</p>
+            <div class="project-tags">
+              <span>Blockchain</span><span>WebSockets</span><span>API</span><span>Analytics</span>
+            </div>
+          </div>
+
+          <div class="project-card card-dark" data-scroll data-scroll-speed="0.6">
+            <div class="project-top">
+              <i class="ri-window-line project-icon"></i>
+              <a href="https://yashodip.vercel.app/" target="_blank" class="project-link-btn"><i class="ri-external-link-line"></i> Live Demo</a>
+            </div>
+            <h3>Interactive Tech Portfolio</h3>
+            <p>A modern, highly interactive portfolio website with GSAP scroll-triggered animations, Locomotive Scroll for smooth scrolling, custom cursors, dynamic backgrounds and a fully responsive layout.</p>
+            <div class="project-tags">
+              <span>HTML/CSS/JS</span><span>GSAP</span><span>Locomotive Scroll</span><span>Vite</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section data-scroll-section class="contact" id="contact">
-        <div class="section-header" data-scroll data-scroll-speed="1">
-          <span class="section-subtitle">03. Connect</span>
-          <h2 class="section-title">Get In Touch</h2>
-        </div>
-        
-        <div class="contact-container">
-          <div class="contact-card whatsapp" data-scroll data-scroll-speed="0.5">
-            <div class="contact-icon"><i class="ri-whatsapp-line"></i></div>
-            <h3>WhatsApp</h3>
-            <p>+91 81030 29909</p>
-            <a href="https://wa.me/918103029909" target="_blank" rel="noopener noreferrer" class="contact-btn">Message Me</a>
-          </div>
+      <section data-scroll-section class="section" id="contact">
+        <div class="section-tag">06. Connect</div>
+        <h2 class="section-heading">Get In <span>Touch</span></h2>
+        <p class="contact-intro">Have a project in mind or just want to connect? Feel free to reach out!</p>
+        <div class="contact-grid">
 
-          <div class="contact-card email" data-scroll data-scroll-speed="0.8">
-            <div class="contact-icon"><i class="ri-mail-send-line"></i></div>
-            <h3>Email</h3>
-            <p>yashodipsinha406@gmail.com</p>
-            <a href="mailto:yashodipsinha406@gmail.com" class="contact-btn">Send Email</a>
-          </div>
+          <a href="https://wa.me/918103029909" target="_blank" rel="noopener noreferrer" class="contact-item card-dark">
+            <div class="contact-icon-wrap whatsapp-icon"><i class="ri-whatsapp-line"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+91 81030 29909</p>
+            </div>
+            <i class="ri-arrow-right-line contact-arrow"></i>
+          </a>
+
+          <a href="mailto:yashodipsinha406@gmail.com" class="contact-item card-dark">
+            <div class="contact-icon-wrap email-icon"><i class="ri-mail-send-line"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>yashodipsinha406@gmail.com</p>
+            </div>
+            <i class="ri-arrow-right-line contact-arrow"></i>
+          </a>
+
+          <a href="https://github.com/Yashodip2802" target="_blank" class="contact-item card-dark">
+            <div class="contact-icon-wrap github-icon"><i class="ri-github-fill"></i></div>
+            <div>
+              <h4>GitHub</h4>
+              <p>@Yashodip2802</p>
+            </div>
+            <i class="ri-arrow-right-line contact-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/yashodipsinha2802" target="_blank" class="contact-item card-dark">
+            <div class="contact-icon-wrap linkedin-icon"><i class="ri-linkedin-fill"></i></div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>yashodipsinha2802</p>
+            </div>
+            <i class="ri-arrow-right-line contact-arrow"></i>
+          </a>
+
         </div>
-        
       </section>
 
       <!-- Footer -->
       <footer data-scroll-section class="footer">
-        <p>&copy; 2026 Yashodip Sinha. Built with code & coffee.</p>
-        <div class="social-links">
-          <a href="https://github.com/Yashodip2802" target="_blank" aria-label="GitHub"><i class="ri-github-line"></i></a>
-          <a href="https://www.linkedin.com/in/yashodipsinha2802" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
-          <a href="mailto:yashodipsinha406@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a>
+        <p>&copy; 2026 Yashodip Sinha. Built with code &amp; coffee.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/Yashodip2802" target="_blank"><i class="ri-github-line"></i></a>
+          <a href="https://www.linkedin.com/in/yashodipsinha2802" target="_blank"><i class="ri-linkedin-line"></i></a>
+          <a href="mailto:yashodipsinha406@gmail.com"><i class="ri-mail-line"></i></a>
         </div>
       </footer>
+
     </div>
 
     <script type="module" src="./main.js"></script>
+    <script>
+      // Hamburger Menu
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.getElementById('mobile-close');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+      mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      mobileLinks.forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    </script>
   </body>
 </html>
