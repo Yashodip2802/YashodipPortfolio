@@ -1,0 +1,175 @@
+/* ── Education Section ── */
+.education-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--backgroundColor);
+  padding: 80px 0;
+}
+
+.education-container {
+  width: var(--cWidth);
+  margin: auto;
+  max-width: var(--cMaxWidth);
+}
+
+.education-section h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.education-section h2 > span {
+  color: var(--accentColor);
+}
+
+/* ── Grid Layout ── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* ── Card Styling ── */
+.edu-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid #363636;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.edu-card:hover {
+  border-color: var(--accentColor);
+  transform: translateY(-5px);
+}
+
+/* ── Status Dot & Pulse ── */
+.edu-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #adacac;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.ec-current .edu-status {
+  background: var(--accentColor);
+  box-shadow: 0 0 10px var(--accentColor);
+  animation: dot-blink 2s ease-in-out infinite;
+}
+
+@keyframes dot-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ── Image ── */
+.edu-img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #363636;
+  flex-shrink: 0;
+}
+
+/* ── Badges ── */
+.edu-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.eb-current {
+  background: rgba(94, 234, 212, 0.1);
+  color: var(--accentColor);
+  border: 1px solid rgba(94, 234, 212, 0.2);
+}
+
+.eb-done {
+  background: rgba(255, 255, 255, 0.05);
+  color: #adacac;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Info ── */
+.edu-info h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  color: #eae5ec;
+}
+
+.edu-org {
+  color: #adacac;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  font-weight: 300;
+}
+
+.edu-year {
+  color: var(--accentColor);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 1400px) {
+  .education-section h2 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .edu-card {
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .education-section {
+    padding: 50px 0;
+  }
+  
+  .education-section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .edu-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .edu-img {
+    width: 100px;
+    height: 75px;
+  }
+}
